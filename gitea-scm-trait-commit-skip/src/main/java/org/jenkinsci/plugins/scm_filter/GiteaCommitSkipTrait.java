@@ -69,7 +69,7 @@ public class GiteaCommitSkipTrait extends CommitSkipTrait {
                     if (("PR-" + pullRequest.getNumber()).equals(scmHead.getName())) {
                         GiteaConnection giteaConnection = ((GiteaSCMSourceRequest) scmSourceRequest).getConnection();
                         if (giteaConnection != null) {
-                            String message = giteaConnection.fetchCommit(pullRequest.getHead().getRepo(), pullRequest.getMergeCommitSha()).getCommit().getMessage();
+                            String message = giteaConnection.fetchCommit(pullRequest.getHead().getRepo(), pullRequest.getHead().getSha()).getCommit().getMessage();
                             return super.containsSkipToken(message.toLowerCase());
                         }
                     }
