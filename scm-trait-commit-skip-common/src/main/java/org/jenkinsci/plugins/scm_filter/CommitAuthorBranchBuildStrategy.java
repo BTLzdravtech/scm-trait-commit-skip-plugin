@@ -1,5 +1,7 @@
 package org.jenkinsci.plugins.scm_filter;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
+import hudson.model.TaskListener;
 import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
@@ -44,7 +46,7 @@ public abstract class CommitAuthorBranchBuildStrategy extends BranchBuildStrateg
     }
 
     @Override
-    public boolean isAutomaticBuild(SCMSource source, SCMHead head, SCMRevision currRevision, SCMRevision prevRevision) {
+    public boolean isAutomaticBuild(SCMSource source, SCMHead head, SCMRevision currRevision, SCMRevision lastBuiltRevision, SCMRevision lastSeenRevision, TaskListener taskListener) {
         String author = null;
         try {
             author = getAuthor(source, currRevision);

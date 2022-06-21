@@ -1,7 +1,10 @@
 package org.jenkinsci.plugins.scm_filter;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
+import hudson.model.TaskListener;
 import javax.annotation.Nonnull;
 
+import jenkins.scm.api.SCMHead;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import com.cloudbees.jenkins.plugins.bitbucket.BitbucketGitSCMRevision;

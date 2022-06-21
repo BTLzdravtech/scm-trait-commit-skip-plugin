@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>scm-trait-commit-skip-parent</artifactId>
+        <version>${revision}${changelist}</version>
+    </parent>
+
+    <artifactId>gitlab-scm-trait-commit-skip</artifactId>
+    <packaging>hpi</packaging>
+
+    <name>GitLab Commit Skip SCM Behaviour</name>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Commit+Skip+SCM+Behaviour+Plugin</url>
+    <description>Allows to ignore GitLab branches/pull requests/commits based on the content of commit messages</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.jenkins.plugins</groupId>
+            <artifactId>gitlab-branch-source</artifactId>
+            <version>${gitlab-branch-source.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>scm-trait-commit-skip-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>gitea</artifactId>
+            <version>1.4.3</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

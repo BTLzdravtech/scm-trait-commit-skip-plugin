@@ -7,7 +7,6 @@ import org.jenkinsci.plugins.github_branch_source.GitHubSCMSource;
 import org.jenkinsci.plugins.github_branch_source.PullRequestSCMRevision;
 import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GitHub;
-
 import hudson.model.Item;
 import jenkins.plugins.git.AbstractGitSCMSource;
 import jenkins.scm.api.SCMRevision;
