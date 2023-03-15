@@ -74,7 +74,7 @@ public class GitLabCommitSkipTrait extends CommitSkipTrait {
                         GitLabApi gitLabApi = ((GitLabSCMSourceRequest) scmSourceRequest).getGitLabApi();
                         if (gitLabApi != null) {
                             try {
-                                message = gitLabApi.getMergeRequestApi().getCommits(gitLabProject, mergeRequest.getIid()).get(0).getMessage();
+                                message = gitLabApi.getMergeRequestApi().getCommits(gitLabProject, mergeRequest.getIid().intValue()).get(0).getMessage();
                             } catch (GitLabApiException e) {
                                 throw new IOException("Failed to retrieve commit message for " + mergeRequest.getTitle(), e);
                             }
