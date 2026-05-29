@@ -1,10 +1,6 @@
 package org.jenkinsci.plugins.scm_filter;
 
-import edu.umd.cs.findbugs.annotations.NonNull;
-import hudson.model.TaskListener;
-import javax.annotation.Nonnull;
-
-import jenkins.scm.api.SCMHead;
+import jakarta.annotation.Nonnull;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import com.cloudbees.jenkins.plugins.bitbucket.BitbucketGitSCMRevision;
@@ -27,13 +23,11 @@ public class BitbucketCommitAuthorBranchBuildStrategy extends CommitAuthorBranch
     @Override
     public String getAuthor(SCMSource source, SCMRevision currRevision) throws CouldNotGetCommitDataException {
         SCMRevision revision = currRevision;
-        if (currRevision instanceof PullRequestSCMRevision) {
-            PullRequestSCMRevision<?> pr = (PullRequestSCMRevision<?>) currRevision;
-            revision = pr.getPull();
+        if (currRevision instanceof PullRequestSCMRevision pr) {
+          revision = pr.getPull();
         }
-        if (revision instanceof BitbucketGitSCMRevision) {
-            BitbucketGitSCMRevision bbRevision = (BitbucketGitSCMRevision) revision;
-            return Util.fixEmpty(bbRevision.getAuthor());
+        if (revision instanceof BitbucketGitSCMRevision bbRevision) {
+          return Util.fixEmpty(bbRevision.getAuthor());
         }
 
         throw new CouldNotGetCommitDataException("Revision class is not a BitbucketGitSCMRevision");

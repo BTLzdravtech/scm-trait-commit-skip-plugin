@@ -1,10 +1,10 @@
 package org.jenkinsci.plugins.scm_filter;
 
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import io.jenkins.plugins.gitlabbranchsource.GitLabSCMSource;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 
+import jakarta.annotation.Nonnull;
 import org.gitlab4j.api.models.Commit;
 import org.kohsuke.stapler.DataBoundConstructor;
 

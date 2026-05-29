@@ -1,9 +1,8 @@
 package org.jenkinsci.plugins.scm_filter;
 
+import edu.umd.cs.findbugs.annotations.CheckForNull;
+import jakarta.annotation.Nonnull;
 import java.io.IOException;
-
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 
 import org.jenkinsci.plugins.github_branch_source.GitHubSCMSource;
 import org.kohsuke.github.GHCommit;

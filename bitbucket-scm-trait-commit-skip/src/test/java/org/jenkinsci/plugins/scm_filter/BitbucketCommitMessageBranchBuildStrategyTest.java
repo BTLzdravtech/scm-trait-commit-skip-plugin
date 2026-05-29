@@ -38,9 +38,8 @@ public class BitbucketCommitMessageBranchBuildStrategyTest {
     }
 
     private BitbucketGitSCMRevision buildRevision(SCMHead head) {
-        BitbucketCloudAuthor author = new BitbucketCloudAuthor();
-        author.setRaw("builder <no-reply@acme.com>");
-        BitbucketCloudCommit commit = new BitbucketCloudCommit("initial commit", "2018-09-21T14:57:59.455870+00:00", "12345674890", author);
+        BitbucketCloudAuthor author = new BitbucketCloudAuthor("builder <no-reply@acme.com>");
+        BitbucketCloudCommit commit = new BitbucketCloudCommit("initial commit", "2018-09-21T14:57:59.455870+00:00", "12345674890", author, null, null);
         return new BitbucketGitSCMRevision(head, commit);
     }
 }

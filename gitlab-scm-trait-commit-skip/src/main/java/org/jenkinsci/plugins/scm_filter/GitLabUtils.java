@@ -34,7 +34,7 @@ public final class GitLabUtils {
 		}
 		GitLabSCMSource glSource = (GitLabSCMSource) source;
 
-		try (GitLabApi gitLabApi = apiBuilder(glSource.getOwner(), glSource.getServerName())) {
+		try (GitLabApi gitLabApi = apiBuilder(glSource.getOwner(), glSource.getServerName(), glSource.getCredentialsId())) {
 			return gitLabApi.getCommitsApi().getCommit(glSource.getProjectPath(), hash);
 		} catch (GitLabApiException e) {
 			throw new CouldNotGetCommitDataException(e);

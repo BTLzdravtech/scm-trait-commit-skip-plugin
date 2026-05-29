@@ -1,8 +1,7 @@
 package org.jenkinsci.plugins.scm_filter;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-
+import edu.umd.cs.findbugs.annotations.CheckForNull;
+import jakarta.annotation.Nonnull;
 import org.jenkinsci.plugin.gitea.GiteaSCMSource;
 import org.jenkinsci.plugin.gitea.client.api.GiteaCommitDetail;
 import org.kohsuke.stapler.DataBoundConstructor;

@@ -1,6 +1,5 @@
 package org.jenkinsci.plugins.scm_filter;
 
-import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.model.TaskListener;
 import java.util.regex.Pattern;
 

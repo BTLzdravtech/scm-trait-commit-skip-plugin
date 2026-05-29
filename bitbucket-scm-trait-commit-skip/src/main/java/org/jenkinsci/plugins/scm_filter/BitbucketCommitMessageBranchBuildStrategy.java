@@ -1,7 +1,6 @@
 package org.jenkinsci.plugins.scm_filter;
 
-import javax.annotation.Nonnull;
-
+import jakarta.annotation.Nonnull;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import com.cloudbees.jenkins.plugins.bitbucket.BitbucketGitSCMRevision;
@@ -24,13 +23,11 @@ public class BitbucketCommitMessageBranchBuildStrategy extends CommitMessageBran
     @Override
     public String getMessage(SCMSource source, SCMRevision currRevision) throws CouldNotGetCommitDataException {
         SCMRevision revision = currRevision;
-        if (currRevision instanceof PullRequestSCMRevision) {
-            PullRequestSCMRevision<?> pr = (PullRequestSCMRevision<?>) currRevision;
-            revision = pr.getPull();
+        if (currRevision instanceof PullRequestSCMRevision pr) {
+          revision = pr.getPull();
         }
-        if (revision instanceof BitbucketGitSCMRevision) {
-            BitbucketGitSCMRevision bbRevision = (BitbucketGitSCMRevision) revision;
-            return Util.fixEmpty(bbRevision.getMessage());
+        if (revision instanceof BitbucketGitSCMRevision bbRevision) {
+          return Util.fixEmpty(bbRevision.getMessage());
         }
 
         throw new CouldNotGetCommitDataException("Revision class is not a BitbucketGitSCMRevision");

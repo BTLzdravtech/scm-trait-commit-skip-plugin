@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.54</version>
+        <version>6.2153.vcf31911d10c4</version>
     </parent>
 
     <artifactId>scm-trait-commit-skip-parent</artifactId>
@@ -14,7 +14,6 @@
 
     <name>Commit Skip SCM Behaviour</name>
     <url>https://wiki.jenkins.io/display/JENKINS/Commit+Skip+SCM+Behaviour+Plugins</url>
-    <description>Reactor adding several scm traits (to ignore commits on pull requests) to several SCM implementations.</description>
 
     <licenses>
         <license>
@@ -25,12 +24,13 @@
 
     <properties>
         <revision>0.5.0</revision>
-        <changelist>-SNAPSHOT</changelist>
-        <bitbucket-branch-source.version>796.v6cb_1559e1673</bitbucket-branch-source.version>
-        <github-branch-source.version>1701.v00cc8184df93</github-branch-source.version>
-        <gitlab-branch-source.version>644.va_a_66886e07b_5</gitlab-branch-source.version>
-        <gitea.version>1.4.5</gitea.version>
-        <jenkins.version>2.387.1</jenkins.version>
+        <changelist>-BTL</changelist>
+        <bitbucket-branch-source.version>937.3.1</bitbucket-branch-source.version>
+        <github-branch-source.version>1967.1969.v205fd594c821</github-branch-source.version>
+        <gitlab-branch-source.version>740.v04f287f9194d</gitlab-branch-source.version>
+        <gitea.version>273.vb_78d13f6d9a_d</gitea.version>
+        <jenkins.baseline>2.541</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <java.level>11</java.level>
     </properties>
 
@@ -61,8 +61,8 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.387.x</artifactId>
-                <version>1887.vda_d0ddb_c15c4</version>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>6269.v7a_159d68a_366</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -117,7 +117,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
+            <version>3.20.0</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
@@ -154,7 +154,7 @@
         <dependency>
             <groupId>io.jenkins.plugins</groupId>
             <artifactId>okhttp-api</artifactId>
-            <version>4.10.0-132.v7a_7b_91cef39c</version>
+            <version>5.3.2-200.vedb_720a_cf1f8</version>
         </dependency>
     </dependencies>
 
